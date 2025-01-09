@@ -9,6 +9,12 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: TimelineProvider {
+    // Initialize with dummy data.
+    // You'd want to replace this with your actual song.
+    let fullEqData: [[Float]] = (0 ..< 100).map { _ in
+        (0 ..< 15).map { _ in Float.random(in: 0 ... 1) }
+    }
+
     func placeholder(in _: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), eqEntries: SimpleEntry.mock)
     }
@@ -23,10 +29,10 @@ struct Provider: TimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 100 {
-            let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset, to: currentDate)!
+        for index in 0 ..< fullEqData.count {
+            let entryDate = Calendar.current.date(byAdding: .second, value: index, to: currentDate)!
             // Populate with dummy data
-            let eqEntries = (0 ..< 15).map { _ in Double.random(in: 0 ... 1) }
+            let eqEntries = fullEqData[index]
             let entry = SimpleEntry(date: entryDate, eqEntries: eqEntries)
             entries.append(entry)
         }
@@ -38,9 +44,9 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let eqEntries: [Double]
+    let eqEntries: [Float]
 
-    static let mock = [
+    static let mock: [Float] = [
         0.45,
         0.45,
         0.45,

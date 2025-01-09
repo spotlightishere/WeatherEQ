@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct WeatherEQChart: View {
-    var entries: [Double]
+    var entries: [Float]
 
     // Vaguely sampled. We start off wth a white color.
     let startingBarColor = Color(red: 0.78, green: 0.95, blue: 0.99)
@@ -73,7 +73,7 @@ struct WeatherView: View {
     // of EQ over the audible range.
     // This will scale from 0 to 100, maybe?
     // TODO(spotlightishere): Fix up
-    var eqEntries: [Double]
+    var eqEntries: [Float]
 
     var body: some View {
         ViewThatFits {
@@ -120,7 +120,7 @@ struct WeatherView: View {
 }
 
 #Preview {
-    let mockEqEntries = [
+    let mockEqEntries: [Float] = [
         0.45,
         0.45,
         0.45,

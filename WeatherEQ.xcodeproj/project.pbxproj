@@ -10,6 +10,7 @@
 		424870F42D2F993700BA4786 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424870F32D2F993600BA4786 /* WidgetKit.framework */; };
 		424870F62D2F993700BA4786 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424870F52D2F993700BA4786 /* SwiftUI.framework */; };
 		424871022D2F993800BA4786 /* WeatherEQ WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 424870F12D2F993600BA4786 /* WeatherEQ WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4248711C2D3037E900BA4786 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4248711B2D3037E900BA4786 /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4248711C2D3037E900BA4786 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +151,7 @@
 			);
 			name = WeatherEQ;
 			packageProductDependencies = (
+				4248711B2D3037E900BA4786 /* Algorithms */,
 			);
 			productName = WeatherEQ;
 			productReference = 424870DB2D2F991800BA4786 /* WeatherEQ.app */;
@@ -203,6 +206,9 @@
 			);
 			mainGroup = 424870D22D2F991800BA4786;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4248711A2D3037E900BA4786 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 424870DC2D2F991800BA4786 /* Products */;
 			projectDirPath = "";
@@ -546,6 +552,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4248711A2D3037E900BA4786 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4248711B2D3037E900BA4786 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4248711A2D3037E900BA4786 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 424870D32D2F991800BA4786 /* Project object */;
 }
