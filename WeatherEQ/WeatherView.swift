@@ -102,7 +102,7 @@ struct WeatherView: View {
 
                         // The line break here implies other things
                         // may be going on, but meh.
-                        Text("Expect snow in the\nnext hour")
+                        Text("Snow for the\nnext hour")
                             .fontWeight(.medium)
                             .shadow(color: .black, radius: 25.0)
                             .font(.system(size: 13.0))
