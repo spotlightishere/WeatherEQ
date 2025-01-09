@@ -48,7 +48,7 @@ struct WeatherEQChart: View {
             // Beyond that, we have three dotted lines.
             // These are each 1/3rd, so we'll approximate.
             AxisMarks(values: [0.33, 0.66, 1.0]) {
-                AxisGridLine(stroke: .init(lineWidth: 0.5, dash: [2]))
+                AxisGridLine(stroke: .init(lineWidth: 1, dash: [2]))
             }
         }
         // No automatic X-axis lines, please.
@@ -111,6 +111,8 @@ struct WeatherView: View {
                     }
                 }
             }.padding(10)
+                .compositingGroup()
+                .shadow(radius: 5)
                 // TODO(spotlightishere): This may be odd...
                 .frame(width: 150, height: 150)
         }
